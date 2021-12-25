@@ -1,0 +1,31 @@
+﻿<ContentDialog
+    x:Class="SupportTicketApplication.Dialogs.AppointmentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SupportTicketApplication.Dialogs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Appointment"
+    PrimaryButtonText="Ok"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Header="Name" Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Row="1" Header="Priority" Text="{Binding Path=Priority, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <TextBox Grid.Row="2" Header="Description" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <DatePicker Grid.Row="3" Header="Start of Appointment" SelectedDate="{Binding Path=Start, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+        <DatePicker Grid.Row="4" Header="End of Appointment" SelectedDate="{Binding Path=Stop, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+        <TextBox Grid.Row="5" Header="Attendees" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Path=Attendees, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+    </Grid>
+</ContentDialog>
